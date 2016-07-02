@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bubble Burst Game</string>
+    <string name="still_mode_string">Still Mode</string>
+    <string name="single_speed_mode_string">Single Speed Mode</string>
+    <string name="random_speed_mode_string">Random Speed Mode</string>
+    <string name="font_size_up">Font Size +</string>
+    <string name="font_size_down">Font Size -</string> 
+    <string name="quit_string">Quit</string>
+    <string name="about_string">About</string>
+    <string name="reset_string">Reset Game</string>
+    <string name="about_text"> This is about text. Prepared by Ognian Kabranov</string>
+</resources>

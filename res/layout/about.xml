@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+
+    <TextView android:id="@+id/about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:text="This the famous Bubble Burst game.\n\nCreated by Ognian Kabranov 2016\n\n
+Very simple game POP POP POP the bubles ... \n\n
+1. TAP the screen: create a bubble\n
+2. TAP the buble to pop the buble\n
+3. If two buble collide they pop\n
+4. Fling a buble with a finger to another bubble to collide\n\n
+Have Fun"
+        
+        
+  />
+</LinearLayout>
