@@ -16,7 +16,7 @@ public class ScoreText extends View {
     static int nMissed=0;
     
     static int nDied=0;
-    static int letterSize=25;
+    static int letterSize=27;
 
 
     public ScoreText(Context context) {
