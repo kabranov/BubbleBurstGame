@@ -188,9 +188,8 @@ public class BubbleActivity extends Activity {
 						if (view.intersects(event.getRawX(),event.getRawY())){
 							newBubble=false;  // we found a bubble
 							view.stopMovement(true);
-							//mFrame.removeViewAt(i);
 							ScoreText.nPopped++;
-							mScoreText.invalidate();
+							//mScoreText.invalidate();
 							break;
 						}
 					}
@@ -360,10 +359,10 @@ public class BubbleActivity extends Activity {
 
 					removeColided();
 					
-					if (moveWhileOnScreen() ) {				
+					if (moveWhileOnScreen() ) {		
 						stopMovement(true);					
 					} else {
-						postInvalidate();
+						postInvalidate();						
 					}		
 				}
 			}, 0, REFRESH_RATE, TimeUnit.MILLISECONDS);
@@ -394,6 +393,7 @@ public class BubbleActivity extends Activity {
 			
 			if ( (localX-bubbleX)*(localX-bubbleX)+(localY-bubbleY)*(localY-bubbleY)<=(this.mRadius+bubble.mRadius)*(this.mRadius+bubble.mRadius)){
 				Log.i(TAG, "returns true");
+				mScoreText.nPopped ++;
 				return true;
 
 			}
@@ -413,17 +413,11 @@ public class BubbleActivity extends Activity {
 				BubbleView view=(BubbleView) mFrame.getChildAt(i);
 				//if (view.collidesWith(this)){
 				if (collidesWith(view)){
-					//Log.i(TAG, "COLIDED WITH  type: "+this.getClass().getSimpleName());
-					view.stopMovement(true);
-					//mFrame.removeViewAt(i);
-					
+					//Log.i(TAG, "COLIDED WITH  type: "+this.getClass().getSimpleName());					
 					stopMovement(true);
-					mScoreText.invalidate();
+					view.stopMovement(true);
 					break;
 				}
-				
-				//mScoreText.invalidate();
-				
 			}
 		}
 		
@@ -454,6 +448,7 @@ public class BubbleActivity extends Activity {
 						if (wasPopped) {							
 								mSoundPool.play(mSoundID, mStreamVolume,mStreamVolume, 1, 0, 1.0f);														
 						}
+						mScoreText.invalidate();
 					}
 				});
 			}
@@ -506,6 +501,7 @@ public class BubbleActivity extends Activity {
 			// TODO - Return true if the BubbleView is still on the screen after
 			// the move operation
 			if ((mXPos+mScaledBitmapWidth/2) < 0 || mXPos + mScaledBitmapWidth/2 > mDisplayWidth || (mYPos + mScaledBitmapWidth/2)< 0 || mYPos + mScaledBitmapWidth/2 > mDisplayHeight){
+				ScoreText.nMissed++;
 				return true;
 			} else {
 				return false;
